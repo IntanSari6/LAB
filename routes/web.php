@@ -6,6 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\RequestLoansController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\ManageInventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,16 @@ Route::get('/requestLoans', [RequestLoansController::class, 'requestLoans']);
 Route::get('/request', [RequestLoansController::class, 'request']);
 
 Route::get('/schedule', [ScheduleController::class, 'schedule']);
+
+Route::get('/manage_lab_inventory', [ManageInventoryController::class, 'manage_lab_inventory']);
+
+Route::get('/lab1', [ManageInventoryController::class, 'lab1']);
+
+Route::get('/lab2', [ManageInventoryController::class, 'lab2']);
+
+Route::get('/detail', [ManageInventoryController::class, 'detail']);
+
+Route::get('/create', [ManageInventoryController::class, 'create']);
+Route::post('/create', [ManageInventoryController::class, 'input']);
+Route::get('/tampil', [ManageInventoryController::class, 'tampil']);
 
