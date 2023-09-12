@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\RequestLoansController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,6 @@ Route::get('/lab_2', [InventoryController::class, 'lab_2']);
 Route::get('/requestLoans', [RequestLoansController::class, 'requestLoans']);
 
 Route::get('/request', [RequestLoansController::class, 'request']);
+
+Route::get('/schedule', [ScheduleController::class, 'schedule']);
 
