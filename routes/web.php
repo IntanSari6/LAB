@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,10 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [MainController::class, 'dashboard']);
+
+Route::get('/inventory', [InventoryController::class, 'inventory']);
+
+Route::get('/lab_1', [InventoryController::class, 'lab_1']);
+
+Route::get('/lab_2', [InventoryController::class, 'lab_2']);
 

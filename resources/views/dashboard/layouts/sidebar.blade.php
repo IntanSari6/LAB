@@ -12,11 +12,11 @@
             <li class="menu-header">Dashboard</li>
             <li class="dropdown">
                 <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard"><i
-                        class="fas fa-fire"></i><span>Dashboard</span></a>
+                        class="fas fa-fire"></i><span>Beranda</span></a>
             </li>
 
             <li class="dropdown">
-                <a class="nav-link {{ Request::is('Inventaris') ? 'active' : '' }}" href="/Inventaris"><i
+                <a class="nav-link {{ Request::is('inventory') ? 'active' : '' }}" href="/inventory"><i
                         class="fas fa-columns"></i> <span>Inventaris Lab</span></a>
             </li>
 
