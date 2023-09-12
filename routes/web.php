@@ -7,6 +7,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\RequestLoansController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ManageInventoryController;
+use App\Http\Controllers\ManageLoansController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,6 @@ Route::get('/detail', [ManageInventoryController::class, 'detail']);
 Route::get('/create', [ManageInventoryController::class, 'create']);
 Route::post('/create', [ManageInventoryController::class, 'input']);
 Route::get('/tampil', [ManageInventoryController::class, 'tampil']);
+
+Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 

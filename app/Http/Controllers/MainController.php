@@ -18,10 +18,7 @@ class mainController extends Controller
 
 
 
-    public function manage_loans()
-    {
-        return view('manage_loans.index');
-    }
+
 
     public function manage_schedule()
     {
