@@ -16,10 +16,6 @@ class mainController extends Controller
         return view('dashboard.index');
     }
 
-    public function requestLoans()
-    {
-        return view('requestLoans.index');
-    }
     public function schedule()
     {
         return view('schedule.index');
