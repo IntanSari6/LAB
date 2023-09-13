@@ -52,7 +52,7 @@
 <br>
 <br>
   <div class="text-center buttons pt-3 pb-2 mt-9">
-    <a href="#" class="btn btn-icon btn-primary">Tambah</a>
+    <a href="/create1" class="btn btn-icon btn-primary">Tambah</a>
     <a href="#" class="btn btn-icon btn-danger">Hapus</a>
   </div>  
 

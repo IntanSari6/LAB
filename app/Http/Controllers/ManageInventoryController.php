@@ -20,6 +20,10 @@ class ManageInventoryController extends Controller
         return view('manage_lab_inventory.lab2');
     }
 
+    function create1(){
+        return view('manage_lab_inventory.create1');
+    }
+
     public function detail()
     {
         return view('manage_lab_inventory.detail');

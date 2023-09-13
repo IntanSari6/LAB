@@ -16,10 +16,6 @@ class mainController extends Controller
         return view('dashboard.index');
     }
 
-
-
-
-
     public function manage_schedule()
     {
         return view('manage_schedule.index');

@@ -43,9 +43,13 @@ Route::get('/schedule', [ScheduleController::class, 'schedule']);
 
 Route::get('/manage_lab_inventory', [ManageInventoryController::class, 'manage_lab_inventory']);
 
+Route::get('/manage_schedule', [MainController::class, 'manage_schedule']);
+
 Route::get('/lab1', [ManageInventoryController::class, 'lab1']);
 
 Route::get('/lab2', [ManageInventoryController::class, 'lab2']);
+
+Route::get('/create1', [ManageInventoryController::class, 'create1']);
 
 Route::get('/detail', [ManageInventoryController::class, 'detail']);
 

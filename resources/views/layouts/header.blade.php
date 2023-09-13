@@ -9,7 +9,7 @@
             <nav id="navbarr" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#Jadwal">Jadwal Peminjaman Lab</a></li>
+                    <li><a class="nav-link scrollto" href="#">Jadwal Peminjaman Lab</a></li>
                     <li><a class="nav-link" href="/login">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
