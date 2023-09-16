@@ -35,7 +35,7 @@
             @foreach ($inventory as $inventory)
             <tr>
               <td>{{$loop->iteration}}</td>
-              <td>{{$->nama_barang}}</td>
+              <td>{{$inventory->nama_barang}}</td>
               <td>{{$inventory->kode_barang}}</td>
               <td>{{$inventory->status}}</td>
               <td>
