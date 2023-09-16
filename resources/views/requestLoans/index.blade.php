@@ -22,48 +22,27 @@
                             <th>Lab</th>
                             <th>Mulai</th>
                             <th>Selesai</th>
+                            <th>Ulasan</th>
                         </tr>
-                        <tr>
-                            <td>01</td>
-                            <td>0101</td>
-                            <td>Inul</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>1</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-
-                        <tr>
-                            <td>02</td>
-                            <td>0102</td>
-                            <td>Daratista</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>2</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-
-                        <tr>
-                            <td>03</td>
-                            <td>0103</td>
-                            <td>Inul Daratista</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>1</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
+                        @foreach ($reqloans as $req)
+                            <tr>
+                                <td>{{ $req->id }}</td>
+                                <td>{{ $req->nip_guru }}</td>
+                                <td>{{ $req->nama_guru }}</td>
+                                <td>{{ $req->kelas }}</td>
+                                <td>{{ $req->mata_pelajaran }}</td>
+                                <td>{{ $req->lab }}</td>
+                                <td>{{ $req->mulai }}</td>
+                                <td>{{ $req->selesai }}</td>
+                                <td>{{ $req->ulasan }}</td>
+                                <td></td>
+                            </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
+
+
             <div class="card-footer text-right">
                 <nav class="d-inline-block">
                     <ul class="pagination mb-0">
@@ -85,6 +64,6 @@
         </div>
     </div>
     <div class="text-center buttons pt-3 pb-2 mt-9">
-        <a href="/request" class="btn btn-icon btn-primary">Next</a>
+        <a href="/requestLoans/create" class="btn btn-icon btn-primary">Next</a>
     </div>
 @endsection

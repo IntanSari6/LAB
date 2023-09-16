@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-        <h3>Riwayat Peminjaman</h3>
+        <h3>Kelola Riwayat Peminjaman</h3>
     </div>
     <br>
     <div class="col-12 col-md-6 col-lg-12">
@@ -22,53 +22,28 @@
                             <th>Lab</th>
                             <th>Mulai</th>
                             <th>Selesai</th>
+                            <th>Ulasan</th>
                         </tr>
-                        <tr>
-                            <td>01</td>
-                            <td>0101</td>
-                            <td>Inul</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>1</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td>
-
-                                <button type="button" class="btn btn-secondary" data-toggle="modal"
-                                    data-target="#staticBackdrop">
-                                    Detail
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>02</td>
-                            <td>0102</td>
-                            <td>Daratista</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>2</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>0103</td>
-                            <td>Inul Daratista</td>
-                            <td>12 RPL</td>
-                            <td>PWPB</td>
-                            <td>2</td>
-                            <td>
-                                <div class="badge badge-success">Active</div>
-                            </td>
-                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
+                        @foreach ($reqloans as $req)
+                            <tr>
+                                <td>{{ $req->id }}</td>
+                                <td>{{ $req->nip_guru }}</td>
+                                <td>{{ $req->nama_guru }}</td>
+                                <td>{{ $req->kelas }}</td>
+                                <td>{{ $req->mata_pelajaran }}</td>
+                                <td>{{ $req->lab }}</td>
+                                <td>{{ $req->mulai }}</td>
+                                <td>{{ $req->selesai }}</td>
+                                <td>{{ $req->ulasan }}</td>
+                                <td></td>
+                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                            </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
+
+
             <div class="card-footer text-right">
                 <nav class="d-inline-block">
                     <ul class="pagination mb-0">
@@ -87,30 +62,9 @@
                     </ul>
                 </nav>
             </div>
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur vel excepturi itaque,
-                            aspernatur in, asperiores eveniet temporibus nisi quas reprehenderit dolor, ratione dolorem modi
-                            earum! Ipsum porro officia quos totam.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+    {{-- <div class="text-center buttons pt-3 pb-2 mt-9">
+        <a href="/manage_schedule" class="btn btn-icon btn-primary">Next</a>
+    </div> --}}
 @endsection

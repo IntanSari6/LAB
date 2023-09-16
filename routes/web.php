@@ -1,13 +1,15 @@
 <?php
 
+use App\Models\Reqloans;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\RequestLoansController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ReqloansController;
 use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\ManageInventoryController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ManageLoansController;
+use App\Http\Controllers\RequestLoansController;
+use App\Http\Controllers\ManageInventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +37,9 @@ Route::get('/lab_1', [InventoryController::class, 'lab_1']);
 
 Route::get('/lab_2', [InventoryController::class, 'lab_2']);
 
-Route::get('/requestLoans', [RequestLoansController::class, 'requestLoans']);
+// Route::get('/requestLoans', [RequestLoansController::class, 'requestLoans']);
 
-Route::get('/request', [RequestLoansController::class, 'request']);
+// Route::get('/request', [RequestLoansController::class, 'request']);
 
 Route::get('/schedule', [ScheduleController::class, 'schedule']);
 
@@ -59,3 +61,6 @@ Route::get('/tampil', [ManageInventoryController::class, 'tampil']);
 
 Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 
+Route::get('/requestLoans', [ReqloansController::class, 'index']);
+Route::get('/requestLoans/create', [ReqloansController::class, 'create']);
+Route::post('/manage_loans/store', [ReqloansController::class, 'store']);
