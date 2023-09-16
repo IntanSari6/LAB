@@ -3934,6 +3934,6 @@ body:not(.sidebar-mini)
 }
 
 .nav-link.active {
-    background-color: #007bff !important;
+    background-color: #6777ef98 !important;
     color: #fff !important;
 }

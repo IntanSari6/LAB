@@ -2,55 +2,126 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\ManageInventory;
 use App\Models\InventoryLab;
-
+use Illuminate\Http\Request;
+use App\Models\Lab;
 class ManageInventoryController extends Controller
 {
-    public function manage_lab_inventory()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('manage_lab_inventory.index');
+        $lab = Lab::all();
+        return view('manage_lab_inventory.index', [
+            'inventory' => InventoryLab::all(),
+            'lab' => $lab
+
+        ]);
     }
-    public function lab1()
+    public function lab()
     {
-        return view('manage_lab_inventory.lab1');
+        return view('manage_lab_inventory.lab', [
+            'inventory' => InventoryLab::all()
+        ]);
     }
-    public function lab2()
+    // public function lab2()
+    // {
+    //     return view('manage_lab_inventory.lab2');
+    // }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        return view('manage_lab_inventory.lab2');
+        return view ('manage_lab_inventory.create');
     }
 
-    function create1(){
-        return view('manage_lab_inventory.create1');
-    }
-
-    public function detail()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        return view('manage_lab_inventory.detail');
+        $validateData = $request->validate([
+            'nama_barang' => 'required',
+            'kode_barang' => 'required|unique:inventory_labs',
+            'status' => 'required',
+        ]); 
+        $validateData['user_id'] = auth()->user()->id;
+
+        InventoryLab::create($validateData);
+
+        return redirect('/manage_lab_inventory')->with('success', 'New post has been added!');
     }
 
-    function create(){
-        return view('manage_lab_inventory.create');
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\ManageInventory  $manageInventory
+     * @return \Illuminate\Http\Response
+     */
+    public function show(InventoryLab $inventory)
+    {
+        return $inventory;
     }
 
-    function input(Request $request){
-        $user= new InventoryLab;
-        $user->nama_barang = $request->nama_barang;
-        $user->kode_barang = $request->kode_barang;
-        $user->status = $request->status;
-        $user->save();
-        return redirect('/tampil');
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\ManageInventory  $manageInventory
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(InventoryLab $inventory,$id)
+    {
+        $lab_asset = $inventory::where('id',$id)->first();
+        // dd($lab);
+        return view('/manage_lab_inventory.edit', [
+            'inventory' => $lab_asset
+        ]);
     }
 
-    function tampil(){
-        $data = InventoryLab::all();
-        dd($data);
-        return view('lab_1', compact (['data']));
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\ManageInventory  $manageInventory
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, InventoryLab $inventory,$id)
+    {
+        // dd($id);
+        // dd($request->input('nama_barang'));
+        $validateData['user_id'] = auth()->user()->id;
+
+        $edit = InventoryLab::where('id',)->first();
+        // dd($edit);
+        $edit->nama_barang = $request->input('nama_barang');
+        $edit->kode_barang = $request->input('kode_barang');
+        $edit->status = $request->input('status');
+        $edit->save();
+
+        return redirect('/manage_lab_inventory')->with('success', 'Post has been updated!');
     }
 
-    function edit($id){
-        $data = InventoryLab::whereId($id)->first();
-        return view('edit', compact(['data']));
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\ManageInventory  $manageInventory
+     * @return \Illuminate\Http\Response
+     */
+    
+    public function destroy(InventoryLab $inventory,$id)
+    {
+        InventoryLab::destroy($id);
+        return redirect('/manage_lab_inventory')->with('success', 'Post has been deleted!');
     }
-
 }

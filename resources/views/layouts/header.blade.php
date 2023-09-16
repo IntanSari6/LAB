@@ -8,9 +8,9 @@
             </div>
             <nav id="navbarr" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#">Jadwal Peminjaman Lab</a></li>
-                    <li><a class="nav-link" href="/login">Login</a></li>
+                    <li><a class="nav-link scrolled {{ Request::is('#') ? 'active' : '' }}" href="#">Beranda</a></li>
+                    <li><a class="nav-link scrolled {{ Request::is('#Jadwal') ? 'active' : '' }}" href="#Jadwal">Jadwal Peminjaman Lab</a></li>
+                    <li><a class="nav-link {{ Request::is('/login') ? 'active' : '' }}" href="/login">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

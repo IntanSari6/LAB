@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             LoansLabSeeder::class,
             InventoryLabSeeder::class,
+            LabSeeder::class,
         ]);
 
     }

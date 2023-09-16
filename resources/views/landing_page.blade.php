@@ -57,148 +57,81 @@
         </section><!-- End About Section -->
 
         <!-- ======= Features Section ======= -->
-        <section id="Jadwal" class="Jadwal">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Laboratorium</h2>
-                    <p>Jadwal Peminjaman Lab</p>
-                </div>
-
-            </div>
-        </section><!-- End Features Section -->
-
-        <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
             <div class="container">
+                <section id="Jadwal" class="Jadwal">
+                    <div class="container">
+        
+                        <div class="section-title" data-aos="fade-up">
+                            <h2>Laboratorium</h2>
+                            <p>Jadwal Peminjaman Lab</p>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Jadwal Lab</h4>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-md">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Guru</th>
+                                                <th>Kelas</th>
+                                                <th>Mata Pelajaran</th>
+                                                <th>Lab</th>
+                                                <th>Durasi</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Inul</td>
+                                                <td>12 RPL</td>
+                                                <td>PWPB</td>
+                                                <td>Lab 1</td>
+                                                <td>12.00-13.00</td>
+                                                <td>
+                                                    <div class="badge badge-success">sedang dipakai</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <nav class="d-inline-block">
+                                        <ul class="pagination mb-0">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1 <span
+                                                        class="sr-only">(current)</span></a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                    
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>
 
                 <div class="row" data-aos="fade-up">
 
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-laptop"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Lab 1</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-laptop-fill"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Lab 2</p>
-                        </div>
-                    </div>
+                    
 
 
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
-
-        <!-- ======= Details Section ======= -->
-        <!-- End Details Section -->
-
-        <!-- ======= Gallery Section ======= -->
-        <!-- End Gallery Section -->
-
-        <!-- ======= Testimonials Section ======= -->
-        <!-- End Testimonials Section -->
-
-        <!-- ======= Team Section ======= -->
-        <!-- End Team Section -->
-
-        <!-- ======= Pricing Section ======= -->
-        <!-- End Pricing Section -->
-
-        <!-- ======= F.A.Q Section ======= -->
-        <section id="faq" class="faq section-bg">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>F.A.Q</h2>
-                    <p>Pertanyaan Yang Sering Ditanyakan</p>
-                </div>
-
-                <div class="faq-list">
-                    <ul>
-                        <li data-aos="fade-up">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                                <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                                    curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
-                                    non.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc?
-                                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec
-                                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus
-                                    turpis massa tincidunt dui.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit?
-                                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-                                    tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem
-                                et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                                    ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit
-                                    adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="400">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius
-                                vel pharetra vel turpis nunc eget lorem dolor? <i
-                                    class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                    integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-        </section><!-- End F.A.Q Section -->
+        </section>
 
     </main>
 @endsection

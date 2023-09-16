@@ -2,75 +2,45 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-    <h3>Edit</h3>
+  <h3>Edit Data Inventaris</h3>
 </div>
 <br>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
-      @method('put')
+    <form method="post" action="{{url('manage_lab_inventory',$inventory->id)}}" class="mb-5" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
+        <input type="text" hidden name ="id" value="{{$inventory->id}}">
       <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control  @error('title') is-invalid @enderror" id="title" name="title" required autofocus value="{{old('title', $post->title)}}">
-        @error('title')
+        <label for="nama_barang" class="form-label">Nama Barang</label>
+        <input type="text" class="form-control  @error('nama_barang') is-invalid @enderror" id="nama_barang" name="nama_barang" required autofocus value="{{old('nama_barang', $inventory->nama_barang)}}">
+        @error('nama_barang')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
         @enderror
       </div>
       <div class="mb-3">
-        <label for="slug" class="form-label">Slug</label>
-        <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{old('slug', $post->slug)}}">
-        @error('slug')
+        <label for="kode_barang" class="form-label">Kode Barang</label>
+        <input type="text" class="form-control @error('kode_barang') is-invalid @enderror" id="kode_barang" name="kode_barang" required value="{{old('kode_barang', $inventory->kode_barang)}}">
+        @error('kode_barang')
         <div class="invalid-feedback">
             {{ $message }}
         </div>
-    @enderror
-      </div>
-      <div class="mb-3">
-        <label for="category" class="form-label">Category</label>
-        <select class="form-select" name="category_id">
-            @foreach ($categories as $category)
-            @if(old('category_id', $post->category_id) == $category->id)
-                <option value="{{ $category->id }}" selected>{{ $category->name  }}</option>
-            @else 
-                <option value="{{ $category->id }}">{{ $category->name  }}</option>
-            @endif
-            @endforeach
-          </select>
-      </div>
-
-      <div class="mb-3">
-        <label for="image" class="form-label">Post Image</label>
-        <input type="hidden" name="oldImage" value="{{ $post->image }}">
-        @if ($post->image)
-        <img src="{{ asset('storage/' .$post->image )}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
-        @else
-        <img class="img-preview img-fluid mb-3 col-sm-5">
-        @endif
-
-        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
-      </div>
-      @error('image')
-      <div class="invalid-feedback">
-          {{ $message }}
-      </div>
-      @enderror
-
-
-      <div class="mb-3">
-        <label for="body" class="form-label">Body</label>
-        @error('body')
-        <p class="text-danger">{{ $message }}</p> 
         @enderror
-        <input id="body" type="hidden" name="body" value="{{ old('body', $post->body) }}">
-        <trix-editor input="body"></trix-editor>
       </div>
-
-      <button type="submit" class="btn btn-primary">Update Post</button>
+        <div class="mb-3">
+            <label for="status" class="form-label">Kondisi</label>
+            <input type="text" class="form-control @error('status') is-invalid @enderror" id="status" name="status" required value="{{old('status', $inventory->status)}}">
+            @error('status')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
+        </div>
+        
+      <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
-
 
 @endsection
