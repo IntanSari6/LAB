@@ -23,6 +23,7 @@
                             <th>Mulai</th>
                             <th>Selesai</th>
                             <th>Ulasan</th>
+                            <th>Aksi</th>
                         </tr>
                         @foreach ($reqloans as $req)
                             <tr>
@@ -35,8 +36,11 @@
                                 <td>{{ $req->mulai }}</td>
                                 <td>{{ $req->selesai }}</td>
                                 <td>{{ $req->ulasan }}</td>
-                                <td></td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                <td>
+                                <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                data-target="#staticBackdrop{{$req->id}}" data-item="">Detail</button>
+                                <td>
+
                             </tr>
                         @endforeach
                     </table>
@@ -64,7 +68,68 @@
             </div>
         </div>
     </div>
-    {{-- <div class="text-center buttons pt-3 pb-2 mt-9">
-        <a href="/manage_schedule" class="btn btn-icon btn-primary">Next</a>
-    </div> --}}
-@endsection
+
+    @foreach ($reqloans as $req)
+   
+            <div class="modal fade" id="staticBackdrop{{$req->id}}"  data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                         <div class="modal-dialog modal-dialog-centered">
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Detail</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body table-responsive">
+                                    <table class="table table-bordered no margin {{ $req->id }}">
+                                        <tbody>
+                                            <tr>
+                                                <th>NIP :</th>
+                                                <td>{{ $req->nip_guru }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Nama :</th>
+                                                <td>{{ $req->nama_guru }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Kelas :</th>
+                                                <td>{{ $req->kelas }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Mata Pelajaran :</th>
+                                                <td>{{ $req->mata_pelajaran }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Lab :</th>
+                                                <td>{{ $req->lab }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Mulai :</th>
+                                                <td>{{ $req->mulai }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Selesai :</th>
+                                                <td>{{ $req->selesai }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Ulasan :</th>
+                                                <td>{{ $req->ulasan }}</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tolak</button>
+                                    <a href="/manage_schedule" class="btn btn-icon btn-primary">Terima</a>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+            @endforeach
+
+
+   
+@endsection 

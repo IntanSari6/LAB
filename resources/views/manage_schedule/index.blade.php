@@ -25,7 +25,6 @@
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
         <div class="col-md-3">
@@ -38,17 +37,18 @@
                         <form action="save_schedule.php" method="post" id="schedule-form">
                             <input type="hidden" name="id" value="">
                             <div class="form-group mb-2">
+                                
                                 <label for="title" class="control-label">NIP</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="title"
-                                    id="title" required>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="nip_guru"
+                                    id="nip_guru">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="title" class="control-label">Nama</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="title"
-                                    id="title" required>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="nama_guru"
+                                    id="nama_guru">
                             </div>
                             <div class="form-group mb-2">
-                                <label for="title" class="control-label">Kelas</label>
+                                <label for="kelas" class="control-label">Kelas</label>
                                 <select class="form-control selectric">
                                     <option>X PPLG</option>
                                     <option>X DKV 1</option>
@@ -64,11 +64,11 @@
                             </div>
                             <div class="form-group mb-2">
                                 <label for="title" class="control-label">Mata Pelajaran</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="title"
-                                    id="title" required>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="mata_pelajaran"
+                                    id="mata_pelajaran">
                             </div>
                             <div class="form-group mb-2">
-                                <label for="title" class="control-label">Lab</label>
+                                <label for="lab" class="control-label">Lab</label>
                                 <select class="form-control selectric">
                                     <option>Lab 1</option>
                                     <option>Lab 2</option>
@@ -77,19 +77,16 @@
                             <div class="form-group mb-2">
                                 <label for="end_datetime" class="control-label">Mulai</label>
                                 <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime" required>
+                                    name="end_datetime" id="end_datetime">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="end_datetime" class="control-label">Selesai</label>
                                 <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime" required>
+                                    name="end_datetime" id="end_datetime">
                             </div>
                         </form>
-
                     </div>
-
                 </div>
-
                 <div class="card-footer">
                     <div class="text-center">
                         <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i
