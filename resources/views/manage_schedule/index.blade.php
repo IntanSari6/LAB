@@ -27,6 +27,7 @@
                 </section>
             </div>
         </div>
+       
         <div class="col-md-3">
             <div class="cardt rounded-0 shadow">
                 <div class="card-header bg-gradient bg-primary text-light">
@@ -40,49 +41,37 @@
                                 
                                 <label for="title" class="control-label">NIP</label>
                                 <input type="text" class="form-control form-control-sm rounded-0" name="nip_guru"
-                                    id="nip_guru">
+                                    id="nip_guru" value="{{ $reqloan->nip_guru ?? '' }}">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="title" class="control-label">Nama</label>
                                 <input type="text" class="form-control form-control-sm rounded-0" name="nama_guru"
-                                    id="nama_guru">
+                                    id="nama_guru" value="{{ $reqloan->nama_guru ?? '' }}">
                             </div>
                             <div class="form-group mb-2">
-                                <label for="kelas" class="control-label">Kelas</label>
-                                <select class="form-control selectric">
-                                    <option>X PPLG</option>
-                                    <option>X DKV 1</option>
-                                    <option>X DKV 2</option>
-                                    <option>XI PPLG 1</option>
-                                    <option>XI PPLG 2</option>
-                                    <option>XI DKV 1</option>
-                                    <option>XI DKV 2</option>
-                                    <option>XII RPL</option>
-                                    <option>XII MM 1</option>
-                                    <option>XII MM 2</option>
-                                </select>
+                                <label for="title" class="control-label">Kelas</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="kelas"
+                                    id="kelas" value="{{ $reqloan->kelas ?? '' }}">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="title" class="control-label">Mata Pelajaran</label>
                                 <input type="text" class="form-control form-control-sm rounded-0" name="mata_pelajaran"
-                                    id="mata_pelajaran">
+                                    id="mata_pelajaran" value="{{ $reqloan->mata_pelajaran ?? ''}}">
                             </div>
                             <div class="form-group mb-2">
-                                <label for="lab" class="control-label">Lab</label>
-                                <select class="form-control selectric">
-                                    <option>Lab 1</option>
-                                    <option>Lab 2</option>
-                                </select>
+                                <label for="title" class="control-label">Lab</label>
+                                <input type="text" class="form-control form-control-sm rounded-0" name="lab"
+                                    id="lab" value="{{ $reqloan->lab ?? '' }}">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="end_datetime" class="control-label">Mulai</label>
                                 <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime">
+                                    name="end_datetime" id="end_datetime" value="{{ $reqloan->mulai ?? ''}}">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="end_datetime" class="control-label">Selesai</label>
                                 <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime">
+                                    name="end_datetime" id="end_datetime" value="{{ $reqloan->selesai ?? ''}}">
                             </div>
                         </form>
                     </div>
@@ -95,8 +84,8 @@
                                 class="fa fa-reset"></i> Cancel</button>
                     </div>
                 </div>
-
             </div>
+           
         </div>
     </div>
 

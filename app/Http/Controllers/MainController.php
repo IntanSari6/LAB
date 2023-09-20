@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reqloans;
 use Illuminate\Http\Request;
 
 class mainController extends Controller
@@ -16,9 +17,10 @@ class mainController extends Controller
         return view('dashboard.index');
     }
 
-    public function manage_schedule()
+    public function manage_schedule(Request $request)
     {
-        return view('manage_schedule.index');
+        $reqloan = Reqloans::find($request->reqloan);
+        return view('manage_schedule.index', compact('reqloan'));
     }
 
     public function request()
