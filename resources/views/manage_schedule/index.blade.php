@@ -17,7 +17,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="fc-overflow">
-                                            <div id="myEvent"></div>
+                                            <div id="KalenderPeminjaman"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -28,67 +28,32 @@
             </div>
         </div>
        
-        <div class="col-md-3">
-            <div class="cardt rounded-0 shadow">
-                <div class="card-header bg-gradient bg-primary text-light">
-                    <h5 class="card-title text-center">Input Data</h5>
-                </div>
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <form action="save_schedule.php" method="post" id="schedule-form">
-                            <input type="hidden" name="id" value="">
-                            <div class="form-group mb-2">
-                                
-                                <label for="title" class="control-label">NIP</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="nip_guru"
-                                    id="nip_guru" value="{{ $reqloan->nip_guru ?? '' }}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="title" class="control-label">Nama</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="nama_guru"
-                                    id="nama_guru" value="{{ $reqloan->nama_guru ?? '' }}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="title" class="control-label">Kelas</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="kelas"
-                                    id="kelas" value="{{ $reqloan->kelas ?? '' }}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="title" class="control-label">Mata Pelajaran</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="mata_pelajaran"
-                                    id="mata_pelajaran" value="{{ $reqloan->mata_pelajaran ?? ''}}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="title" class="control-label">Lab</label>
-                                <input type="text" class="form-control form-control-sm rounded-0" name="lab"
-                                    id="lab" value="{{ $reqloan->lab ?? '' }}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="end_datetime" class="control-label">Mulai</label>
-                                <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime" value="{{ $reqloan->mulai ?? ''}}">
-                            </div>
-                            <div class="form-group mb-2">
-                                <label for="end_datetime" class="control-label">Selesai</label>
-                                <input type="datetime-local" class="form-control form-control-sm rounded-0"
-                                    name="end_datetime" id="end_datetime" value="{{ $reqloan->selesai ?? ''}}">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i
-                                class="fa fa-save"></i> Save</button>
-                        <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i
-                                class="fa fa-reset"></i> Cancel</button>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
-    </div>
-
-
-    {{-- </div> --}}
+        
 @endsection
+@push('script')
+<script>
+
+$("#KalenderPeminjaman").fullCalendar({
+  height: 'auto',
+  header: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay,listWeek'
+  },
+  editable: true,
+  events: [
+    @foreach($reqloan as $item)
+    {
+      title: '{{$item->nama_guru}}',
+      start: '{{$item->mulai}}',
+      end: '{{$item->selesai}}',
+      backgroundColor: "#fff",
+      borderColor: "#fff",
+      textColor: '#000'
+    },
+    @endforeach
+  ]
+
+});
+</script>
+@endpush

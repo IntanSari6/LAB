@@ -1,3 +1,12 @@
+@extends('main')
+
+@section('container')
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
+        <h3>Riwayat Peminjaman</h3>
+    </div>
+    <br>
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -82,3 +91,4 @@
         </div>
     </div>
 </div>
+@endsection 

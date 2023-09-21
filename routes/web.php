@@ -64,3 +64,5 @@ Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 Route::get('/requestLoans', [ReqloansController::class, 'index']);
 Route::get('/requestLoans/create', [ReqloansController::class, 'create']);
 Route::post('/manage_loans/store', [ReqloansController::class, 'store']);
+
+Route::get('ubah_statusLoans/{id}/{status}', [ManageLoansController::class,'update_status']);

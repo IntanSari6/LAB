@@ -19,7 +19,7 @@ class mainController extends Controller
 
     public function manage_schedule(Request $request)
     {
-        $reqloan = Reqloans::find($request->reqloan);
+        $reqloan = Reqloans::where('status', 'terima')->get();
         return view('manage_schedule.index', compact('reqloan'));
     }
 

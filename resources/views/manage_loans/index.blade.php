@@ -122,8 +122,8 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                <a href="/requestLoans" class="btn btn-icon btn-secondary">Tolak</a>
-                                <a href="/manage_schedule?reqloan={{ $req->id }}" class="btn btn-icon btn-primary">Terima</a>
+                                <a href="/ubah_statusLoans/{{ $req->id }}/tolak" class="btn btn-icon btn-secondary">Tolak</a>
+                                <a href="/ubah_statusLoans/{{ $req->id }}/terima" class="btn btn-icon btn-primary">Terima</a>
                                 </div>
                             </div>
                          </div>

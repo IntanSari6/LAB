@@ -100,7 +100,7 @@
     <script src="dist/assets/js/scripts.js"></script>
     <script src="dist/assets/js/custom.js"></script>
 
-    </head>
+    @stack('script')
 </body>
 
 </html>
