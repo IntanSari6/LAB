@@ -24,6 +24,8 @@ class CreateReqloansTable extends Migration
             $table->dateTime('selesai');
             $table->text('ulasan');
             $table->timestamps();
+            $table->string('status');
+
         });
     }
 
